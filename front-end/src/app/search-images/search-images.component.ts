@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {faSearch} from "@fortawesome/free-solid-svg-icons";
+import {faDownload, faSearch} from "@fortawesome/free-solid-svg-icons";
 import {FlickrService} from "../services/flickr.service";
 import { map } from 'rxjs/operators';
 
@@ -17,12 +17,18 @@ export class SearchImagesComponent {
   constructor(private flickrService: FlickrService) {
   }
 
-  async search(event: any) {
-    this.keyword = event.target.value.toLowerCase();
+search(event: any) {
+    this.keyword = event.value.toLowerCase();
+    console.log(this.keyword)
     if (this.keyword && this.keyword.length > 0) {
-      const res =  await this.flickrService.search_keyword(this.keyword);
-      this.images = res;
+      this.flickrService.search_keyword(this.keyword)
+        .toPromise()
+        .then(res => {
+          this.images = res;
+        });
     }
 
   }
+
+  protected readonly faDownload = faDownload;
 }
