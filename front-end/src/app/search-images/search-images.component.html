@@ -1,16 +1,35 @@
 <section id="main">
   <div class="center_content">
-    <div class="d-flex" >
-        <img src="assets/pngwing.com.png">
-        <h3>flickr.com</h3>
+    <div class="d-flex">
+      <img src="assets/pngwing.com.png">
+      <h3>flickr.com</h3>
     </div>
     <div class="input_search">
-      <input
-        id="search_input"
-        type="text"
-        placeholder="Search for free photos"
+      <input #event (input)="search(event)"
+             id="search_input"
+             type="text"
+             placeholder="Search for free photos"
       />
       <fa-icon [icon]="faSearch"></fa-icon>
     </div>
   </div>
+
 </section>
+<div class="row me-3 m-lg-3">
+  <div class="col-sm-12 col-md-6 col-lg-4 p-2" *ngFor="let image of images">
+    <div class="bottom_details ">
+      <div class="card" >
+        <a href="{{image.url}}_b.jpg">
+          <img  src="{{image.url}}_m.jpg" title="{{image.title}}">
+        </a>
+      </div>
+      <button>
+        <fa-icon [icon]="faDownload"></fa-icon>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+
