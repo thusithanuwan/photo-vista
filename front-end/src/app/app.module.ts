@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { SearchImagesComponent } from './search-images/search-images.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import { GalleryComponent } from './gallery/gallery.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchImagesComponent
+    SearchImagesComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
