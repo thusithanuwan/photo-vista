@@ -16,10 +16,14 @@
   </button>
 </header>
 <main >
-  <div class="image loader" *ngFor="let image of imageList"  [style.background-image]="'url(' + image + ')'"></div>
+  <div class="image bottom_details loader" *ngFor="let image of imageList"  [style.background-image]="'url(' + image + ')'">
+    <button id="button">
+      <fa-icon [icon]="faDownload"></fa-icon>
+    </button>
+  </div>
 </main>
 <div id="overlay" (dragover)="preventDefault($event)" (drop)="preventDefault($event)" (click)="show=false" *ngIf="show" class="d-flex justify-content-center
-        align-items-center text-white">
+        align-items-center text-white ">
   <div (dragover)="preventDefault($event)" (drop)="drop($event)" id="drop-zone" class="d-flex
                         justify-content-center
                         align-items-center flex-column">

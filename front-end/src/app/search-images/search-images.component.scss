@@ -77,30 +77,7 @@
   color: #ec5583;
 }
 
-
-
-
-.bottom_details {
-position: relative;
-}
-
-button {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background-color: #fff;
-  outline: none;
-  border: none;
-  font-size: 0.5rem;
-  padding: 10px;
-  border-radius: 10px;
-  color: #737373;
-  display: none;
-}
-.bottom_details:hover button{
-  display: block;
-}
-
+/*image div*/
 img {
   object-fit: cover;
   width: 100%;

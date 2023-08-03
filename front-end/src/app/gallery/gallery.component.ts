@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment.development";
+import {faDownload} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-gallery',
@@ -45,4 +46,6 @@ export class GalleryComponent {
     });
 
   }
+
+  protected readonly faDownload = faDownload;
 }

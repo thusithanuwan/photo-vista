@@ -1,2 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bootstrap/scss/bootstrap";
+
+
+.bottom_details {
+  position: relative;
+}
+
+#button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #fff;
+  outline: none;
+  border: none;
+  font-size: 0.5rem;
+  padding: 10px;
+  border-radius: 10px;
+  color: #737373;
+  display: none;
+}
+.bottom_details:hover #button{
+  display: block;
+}
