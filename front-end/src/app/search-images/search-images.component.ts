@@ -29,6 +29,16 @@ search(event: any) {
 
   }
 
+  onScroll() {
+    if (this.keyword && this.keyword.length > 0) {
+      this.flickrService.search_keyword(this.keyword)
+        .toPromise()
+        .then(res => {
+          this.images = this.images.concat(res);
+        });
+    }
+  }
+
   protected readonly faDownload = faDownload;
   protected readonly faHome = faHome;
 }

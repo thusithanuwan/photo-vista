@@ -8,6 +8,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { GalleryComponent } from './gallery/gallery.component';
 import {RouterLink, RouterModule, Routes} from "@angular/router";
+import {InfiniteScrollModule} from "ngx-infinite-scroll";
 
 
 const routes:Routes =[
@@ -32,6 +33,7 @@ const routes:Routes =[
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
+    InfiniteScrollModule,
     RouterModule,
     RouterModule.forRoot(routes),
     RouterLink
