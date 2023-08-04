@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment.development";
-import {faDownload} from "@fortawesome/free-solid-svg-icons";
+import {faDownload, faSearch} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-gallery',
@@ -12,11 +12,13 @@ export class GalleryComponent {
     show = false;
     imageList:any = [];
 
-    constructor(private http : HttpClient) {
-      this.http.get(environment.REST_API_URL).subscribe((imageUrlList)=> {
+
+  constructor(private http : HttpClient) {
+    this.http.get(environment.REST_API_URL).subscribe((imageUrlList)=> {
         this.imageList = imageUrlList;
       });
-    }
+  }
+
 
   preventDefault(event: DragEvent) {
     event.preventDefault();
@@ -48,4 +50,5 @@ export class GalleryComponent {
   }
 
   protected readonly faDownload = faDownload;
+  protected readonly faSearch = faSearch;
 }
