@@ -1,46 +1,40 @@
 #main {
-  background-color: #212124;
   width: 100vw;
-  height: 40vh;
 }
-.center_content {
-  width: 40%;
-  color: black;
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.center_content{
+  margin-top: 10px;
 }
-.center_content div img{
-  height: 100px;
-  width: 100px;
-  font-weight: 500;
-  margin-top: 50px;
-  margin-bottom: 10px;
+.center_content div:first-child {
+  height: 60px;
+  width: 250px;
+  background-image: url("~src/assets/Screenshot from 2023-08-04 13-33-18.png");
+  background-size: contain;
+  margin-left: 15px;
+  background-repeat: no-repeat;
+
 }
-.center_content > div:first-child{
-  margin-left: 90px;
+#home{
+  margin-right: 15px;
+  height: 45px;
+  width: 52px;
 }
-.center_content div h3{
-  color: white;
-  margin-top: 90px;
-  margin-left: 20px;
-}
+
+
 .center_content .input_search {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin: 0 20px ;
   position: relative;
+  border: 4px solid lightgrey;
+  border-radius: 5px;
 }
 
 .input_search input {
   width: 100%;
-  height: 48px;
   border: none;
   outline: none;
-  border: 1px solid lightgrey;
   border-radius: 5px;
   padding: 10px 20px;
   font-size: 1.125rem;
@@ -74,15 +68,18 @@
   transition-duration: 300ms;
 }
 .input_search fa-icon:hover {
-  color: #ec5583;
+  color: black;
 }
 
 /*image div*/
 img {
   object-fit: cover;
   width: 100%;
-  height: 250px;
+  height: 200px;
   border-radius: 5px;
+}
+.row{
+  margin: 20px 35px !important;
 }
 
 
