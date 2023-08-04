@@ -7,7 +7,19 @@ import { SearchImagesComponent } from './search-images/search-images.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { GalleryComponent } from './gallery/gallery.component';
+import {RouterLink, RouterModule, Routes} from "@angular/router";
 
+
+const routes:Routes =[
+  {
+    path :  '',
+    component: GalleryComponent
+  },
+  {
+    path:'search',
+    component:SearchImagesComponent
+  }
+]
 
 @NgModule({
   declarations: [
@@ -20,6 +32,9 @@ import { GalleryComponent } from './gallery/gallery.component';
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
+    RouterModule,
+    RouterModule.forRoot(routes),
+    RouterLink
   ],
   providers: [],
   bootstrap: [AppComponent]
