@@ -18,9 +18,9 @@
 </header>
 <main >
   <div class="image bottom_details loader" *ngFor="let image of imageList"  [style.background-image]="'url(' + image + ')'">
-    <a id="button" [href]="image" download="image.jpg">
+    <button (click)="save($event)" id="button"  download="image.jpg">
       <fa-icon [icon]="faDownload"></fa-icon>
-    </a>
+    </button>
   </div>
 </main>
 <div id="overlay" (dragover)="preventDefault($event)" (drop)="preventDefault($event)" (click)="show=false" *ngIf="show" class="d-flex justify-content-center

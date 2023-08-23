@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment.development";
 import {faDownload, faSearch} from "@fortawesome/free-solid-svg-icons";
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-gallery',
@@ -51,4 +52,16 @@ export class GalleryComponent {
 
   protected readonly faDownload = faDownload;
   protected readonly faSearch = faSearch;
+
+  save(event: MouseEvent) {
+    const element = event.target as HTMLElement;
+    const parentDiv = element.closest('div'); // Get the parent div element
+    const backgroundStyle = window.getComputedStyle(parentDiv!).getPropertyValue('background-image');
+
+    // Extract the URL from the background style
+    const downUrl = backgroundStyle.replace('url("', '').replace('")', '');
+    alert(downUrl);
+    const imageName = downUrl.replace( "http://localhost:8080/gallery/images/", "");
+    saveAs(downUrl, imageName);
+  }
 }
